@@ -1,0 +1,64 @@
+﻿<?xml version="1.0"?>
+<grammar xml:lang="pt-PT" version="1.0" xmlns="http://www.w3.org/2001/06/grammar" root="Quantity" tag-format="semantics/1.0">
+
+	<rule id="Quantity" scope="public">
+		<example> três vezes </example>
+		<example> quatro </example>
+
+		<one-of>
+		
+			<item>
+				<item>
+					<ruleref uri="#QuantitySpec"/>
+					<tag> out.QuantitySpec = rules.QuantitySpec; </tag>
+				</item>
+				<item repeat="0-1">
+					<ruleref uri="#QuantityOptionalObject"/>
+				</item>
+			</item>
+      
+			<item>
+				<ruleref uri="#QuantityObject"></ruleref>
+				<tag> out.QuantityObject = rules.QuantityObject </tag>
+			</item>
+		</one-of>
+	</rule>
+  
+	<rule id="QuantitySpec">
+		<one-of>
+			<item> um <tag> out = "1x" </tag> </item>
+			<item> dois <tag> out = "2x" </tag> </item>
+			<item> três <tag> out = "3x" </tag> </item>
+			<item> quatro <tag> out = "4x" </tag> </item>
+			<item> cinco <tag> out = "5x" </tag> </item>
+			<item> seis <tag> out = "6x" </tag> </item>
+			<item> sete <tag> out = "7x" </tag> </item>
+			<item> oito <tag> out = "8x" </tag> </item>
+			<item> nove <tag> out = "9x" </tag> </item>
+			<item> dez <tag> out = "10x" </tag> </item>
+		</one-of>
+	</rule>
+
+	<rule id="QuantityOptionalObject">
+		<one-of>
+			<item> vezes </item>
+		</one-of>
+	</rule>
+
+	<rule id="QuantityObject">
+		<item>
+			<one-of>
+				<item> <item repeat="0-1"> para o </item> fim </item> <item repeat="0-1"> da página</item>
+				<item>
+					<item repeat="0-1"> para o </item> inicio <item repeat="0-1"> da página</item>
+				</item>
+				<item> completo </item>
+				<item> total </item>
+				<item> totalmente </item>
+				<item> completamente </item>
+			</one-of>
+		</item>
+		<tag>out = "total"</tag>
+
+  </rule>
+</grammar>

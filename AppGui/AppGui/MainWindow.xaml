@@ -1,0 +1,27 @@
+﻿<Window x:Class="AppGui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppGui"
+        mc:Ignorable="d"
+        Title="IM_Assignment4" Height="522.87" Width="420.91">
+    <Grid VerticalAlignment="Center" Height="461" Margin="0,10,0,21">
+        <Label Content="Possíveis Gestos" HorizontalAlignment="Left" Margin="3,13,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <Label Content="Ajuda Textual" HorizontalAlignment="Left" Margin="4,261,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <TextBox x:Name="command" IsReadOnly="True" HorizontalAlignment="Left" Height="118" Margin="10,307,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="388" FontSize="14" Background="{x:Null}" Foreground="Black" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
+        <Separator Margin="9,260,28,121"/>
+        <MediaElement x:Name="img1" MediaEnded="img1_MediaEnded" LoadedBehavior="Manual" Source="Resources/Abrir Tab.gif" HorizontalAlignment="Left" Height="161" Margin="8,62,0,0" VerticalAlignment="Top" Width="91"/>
+        <MediaElement x:Name="img2" MediaEnded="img2_MediaEnded" LoadedBehavior="Manual" Source="Resources/Ver Histórico.gif" HorizontalAlignment="Left" Height="161" Margin="107,62,0,0" VerticalAlignment="Top" Width="91"/>
+        <MediaElement x:Name="img3" MediaEnded="img3_MediaEnded" LoadedBehavior="Manual" Source="Resources/Zoom In.gif" HorizontalAlignment="Left" Height="161" Margin="207,62,0,0" VerticalAlignment="Top" Width="91"/>
+        <MediaElement x:Name="img4" MediaEnded="img4_MediaEnded" LoadedBehavior="Manual" Source="Resources/Zoom Out.gif" HorizontalAlignment="Left" Height="161" Margin="307,62,0,0" VerticalAlignment="Top" Width="91"/>
+
+        <TextBox Name="legend1" Text="Abrir Tab" HorizontalAlignment="Center" Margin="10,225,315,0" VerticalAlignment="Top" TextAlignment="Center" IsReadOnly="True" BorderBrush="{x:Null}" Width="88"/>
+        <TextBox Name="legend2" Text="Ver Histórico" HorizontalAlignment="Center" Margin="107,225,215,0" VerticalAlignment="Top" RenderTransformOrigin="-0.071,-0.462" TextAlignment="Center" IsReadOnly="True" BorderBrush="{x:Null}" Width="91"/>
+        <TextBox Name="legend3" Text="Zoom In" Margin="207,225,115,0" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center" IsReadOnly="True" BorderBrush="{x:Null}" Width="91"/>
+        <TextBox x:Name="legend4" Text="Zoom Out" Margin="307,225,15,0" VerticalAlignment="Top" HorizontalAlignment="Center" TextAlignment="Center" IsReadOnly="True" BorderBrush="{x:Null}" Width="91" RenderTransformOrigin="0.45,0.278"/>
+        <Separator Margin="9,36,28,395"/>
+
+
+    </Grid>
+</Window>
