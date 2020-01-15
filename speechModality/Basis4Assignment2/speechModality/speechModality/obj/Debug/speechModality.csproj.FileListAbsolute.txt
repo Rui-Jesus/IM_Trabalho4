@@ -224,3 +224,29 @@ C:\Users\ruigr\OneDrive\Ambiente de Trabalho\IM\IM - 4º Trabalho\speechModality
 C:\Users\ruigr\OneDrive\Ambiente de Trabalho\IM\IM - 4º Trabalho\speechModality\Basis4Assignment2\speechModality\speechModality\obj\Debug\speechModality.csproj.CopyComplete
 C:\Users\ruigr\OneDrive\Ambiente de Trabalho\IM\IM - 4º Trabalho\speechModality\Basis4Assignment2\speechModality\speechModality\obj\Debug\speechModality.exe
 C:\Users\ruigr\OneDrive\Ambiente de Trabalho\IM\IM - 4º Trabalho\speechModality\Basis4Assignment2\speechModality\speechModality\obj\Debug\speechModality.pdb
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\bin\Debug\ptG.grxml
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\bin\Debug\open.grxml
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\bin\Debug\quantity.grxml
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\bin\Debug\save.grxml
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\bin\Debug\commands.grxml
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\bin\Debug\search.grxml
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\bin\Debug\speechModality.exe.config
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\bin\Debug\speechModality.exe
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\bin\Debug\speechModality.pdb
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\bin\Debug\Microsoft.Speech.dll
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\bin\Debug\mmisharp.pdb
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\obj\Debug\speechModality.csprojAssemblyReference.cache
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\obj\Debug\MainWindow.g.cs
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\obj\Debug\App.g.cs
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\obj\Debug\speechModality_Content.g.cs
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\obj\Debug\speechModality_MarkupCompile.cache
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\obj\Debug\speechModality_MarkupCompile.lref
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\obj\Debug\MainWindow.baml
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\obj\Debug\speechModality.g.resources
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\obj\Debug\speechModality.Properties.Resources.resources
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\obj\Debug\speechModality.csproj.GenerateResource.cache
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\obj\Debug\speechModality.csproj.CopyComplete
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\obj\Debug\speechModality.exe
+C:\Users\Carlos Soares\Git\IM_Trabalho4\speechModality\Basis4Assignment2\speechModality\speechModality\obj\Debug\speechModality.pdb

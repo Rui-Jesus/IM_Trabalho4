@@ -77,22 +77,30 @@ namespace AppGui
         }
         public void printPossibleCommands(String text)
         {
-            command.Text = text;
+            App.Current.Dispatcher.Invoke(() => {
+                command.Text = text;
+            });
+            //command.Text = text;
         }
 
         public void showGifInfo(List<string> lista)
         {
-            int diff = 4 - lista.Count;
-            for (int i = 0; i < diff;i++) { lista.Add(" "); }
+
+            App.Current.Dispatcher.Invoke(() => {
+                
             
-            img1.Source = new Uri("Resources/" + lista[0] + ".gif", UriKind.Relative);
-            legend1.Text = lista[0];
-            img2.Source = new Uri("Resources/" + lista[1] + ".gif", UriKind.Relative);
-            legend2.Text = lista[1];
-            img3.Source = new Uri("Resources/" + lista[2] + ".gif", UriKind.Relative);
-            legend3.Text = lista[2];
-            img4.Source = new Uri("Resources/" + lista[3] + ".gif", UriKind.Relative);
-            legend4.Text = lista[3];
+                int diff = 4 - lista.Count;
+                for (int i = 0; i < diff;i++) { lista.Add(" "); }
+            
+                img1.Source = new Uri("Resources/" + lista[0] + ".gif", UriKind.Relative);
+                legend1.Text = lista[0];
+                img2.Source = new Uri("Resources/" + lista[1] + ".gif", UriKind.Relative);
+                legend2.Text = lista[1];
+                img3.Source = new Uri("Resources/" + lista[2] + ".gif", UriKind.Relative);
+                legend3.Text = lista[2];
+                img4.Source = new Uri("Resources/" + lista[3] + ".gif", UriKind.Relative);
+                legend4.Text = lista[3];
+            });
         }
 
 
@@ -104,45 +112,41 @@ namespace AppGui
             var com = doc.Descendants("command").FirstOrDefault().Value;
             dynamic json = JsonConvert.DeserializeObject(com);
 
-            List<String> words = ((JArray)json["recognized"]).ToObject<List<String>>();
-
-            var rec0 = words[0].ToString();
-            var rec1 = "";
-            int cont = 0;
-
-
             //We always receive 3 arguments -> commandID - commandName - confidence
-            string commandID = json["recognized"][0];
-            var commandName = json["recognized"][1];
-            var confidence = json["recognized"][2];
-
-
-            foreach (string word in words)
-            {
-                cont++;
-            }
-            if (cont == 1)
-            {
-                rec1 = "";
-            }
-            else { rec1 = words[1].ToString(); }
-
-            string searchText = "";
-
-
-            foreach (string word in words)
-            {
-                if (word != "search")
-                {
-                    searchText += word + " ";
-                }
-            }
-
+            string command = json["recognized"][0];
+            
             List<String> numbers = new List<String>() { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
 
-
-            switch (commandID)
+            switch (command)
             {
+                case "search":
+                    Debug.WriteLine("entrei");
+                    List<String> words = ((JArray)json["recognized"]).ToObject<List<String>>();
+                        
+                    var searchText = "";
+                    foreach (string word in words)
+                    {
+                        if (word != "search")
+                        {
+                            searchText += word + " ";
+                        }
+                    }
+                    Console.WriteLine(searchText);
+                    sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
+                    sim.Keyboard.KeyPress(VirtualKeyCode.VK_E);
+                    sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
+                    Console.WriteLine(searchText);
+                    sim.Keyboard.Sleep(200);
+                    sim.Keyboard.TextEntry(searchText);
+                    System.Threading.Thread.Sleep(200);
+                    sim.Keyboard.KeyPress(VirtualKeyCode.RETURN);
+                    printPossibleCommands("\u2022 Pode fazer scroll up/down\n" +
+                "\u2022 Pode aproximar ou afastar página através de zoom in/out\n" +
+                "\u2022 Pode consultar o seu histórico\n" +
+                "\u2022 Pode escolher qual link abrir, dizendo a sua posição (Ex: Abrir o 2º link)");
+                    showGifInfo(new List<string> { "Scroll Up", "Scroll Down", "Ver Histórico", "Abrir Tab" });
+                    SendTtsMessage("Estes são os teus resultados");
+                    break;
                 case "0": //Close tab
                     tabs = driver.WindowHandles.ToList();
                     if (tabs.Count() > 1)
@@ -158,8 +162,12 @@ namespace AppGui
                     sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
                     driver.SwitchTo().Window(driver.WindowHandles.Last());
                     SendTtsMessage("Aqui está o teu histórico de navegação");
+                    printPossibleCommands("\u2022 Abrir/Fechar uma Tab\n" +
+                "\u2022 Fazer zoom in/out\n" +
+                "\u2022 Fazer scroll up/down");
+                    showGifInfo(new List<string> { "Abrir Tab", "Fechar Tab" });
                     break;
-                    
+
                 case "2": //Maximize
                     driver.Manage().Window.Maximize();
                     break;
@@ -173,26 +181,71 @@ namespace AppGui
                     sim.Keyboard.KeyPress(VirtualKeyCode.VK_T);
                     sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
                     driver.SwitchTo().Window(driver.WindowHandles.Last());
+                    printPossibleCommands("\u2022 Pode pesquisar por termos que pretender\n" +
+                "\u2022 Pode consultar o seu histórico" +
+                "\u2022 Abrir/Fechar uma tab");
+                    showGifInfo(new List<string> { "Ver Histórico", "Fechar Tab" });
                     break;
-                    
+
                 case "5": //Scroll down
-                    sim.Keyboard.KeyPress(VirtualKeyCode.NEXT);
+                    string downss = json["recognized"][1];
+                    if (downss == "total")
+                    {
+                        sim.Keyboard.KeyPress(VirtualKeyCode.END);
+                    }
+                    else
+                    {
+
+                    int downs = Int32.Parse(downss);
+                    for (int i = 0; i < downs; i++)
+                    {
+                        sim.Keyboard.KeyPress(VirtualKeyCode.NEXT);
+                    }
+                    }
                     break;
 
                 case "6": //Scroll up
-                    sim.Keyboard.KeyPress(VirtualKeyCode.PRIOR);
+                    string upss = json["recognized"][1];
+                    if (upss == "total")
+                    {
+                        sim.Keyboard.KeyPress(VirtualKeyCode.HOME);
+                    }
+                    else
+                    {
+                        int ups = Int32.Parse(upss);
+                        for (int i = 0; i < ups; i++)
+                        {
+                            sim.Keyboard.KeyPress(VirtualKeyCode.PRIOR);
+                        }
+                    }
                     break;
-                    
+
                 case "7": //Zoom in
+                    Debug.WriteLine("entrei");
+                    string timesins = json["recognized"][1];
+                    int timesin = Int32.Parse(timesins);
+                    Debug.WriteLine(timesin);
+                    
                     sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
-                    sim.Keyboard.KeyPress(VirtualKeyCode.OEM_PLUS);
+                    for (int i = 0; i < timesin; i++)
+                    {
+                        sim.Keyboard.KeyPress(VirtualKeyCode.OEM_PLUS);
+                    }
                     sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
                     
                     break;
                 case "8": //Zoom out
+                    string timesouts = json["recognized"][1];
+                    int timesout = Int32.Parse(timesouts);
+                    Debug.WriteLine(timesout);
+
                     sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
-                    sim.Keyboard.KeyPress(VirtualKeyCode.OEM_MINUS);
-                    sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
+                    
+                    for (int i = 0; i < timesout; i++)
+                    {
+                        sim.Keyboard.KeyPress(VirtualKeyCode.OEM_MINUS);
+                    }
+                        sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
                     
                     break;
                 case "9": //Próxima tab
@@ -230,20 +283,15 @@ namespace AppGui
                     }
                     break;
                 case "11": //favoritos
-                    switch (rec1)
-                    {
-                        default:
-                            sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
-                            sim.Keyboard.KeyPress(VirtualKeyCode.VK_D);
-                            sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
-                            System.Threading.Thread.Sleep(100);
-                            sim.Keyboard.KeyPress(VirtualKeyCode.RETURN);
-                            SendTtsMessage("Adicionado com sucesso aos teus favoritos");
-                            break;
-                    }
+                    sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
+                    sim.Keyboard.KeyPress(VirtualKeyCode.VK_D);
+                    sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
+                    System.Threading.Thread.Sleep(100);
+                    sim.Keyboard.KeyPress(VirtualKeyCode.RETURN);
+                    SendTtsMessage("Adicionado com sucesso aos teus favoritos");
                     break;
                 case "12": //ir para a página dos favoritos
-                
+
                     sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
                     sim.Keyboard.KeyDown(VirtualKeyCode.SHIFT);
                     sim.Keyboard.KeyPress(VirtualKeyCode.VK_O);
@@ -251,21 +299,16 @@ namespace AppGui
                     sim.Keyboard.KeyUp(VirtualKeyCode.SHIFT);
                     SendTtsMessage("Aqui estão os teus favoritos");
                     break;
-                case "search": //search
-                    sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
-                    sim.Keyboard.KeyPress(VirtualKeyCode.VK_E);
-                    sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
-                    Console.WriteLine(searchText);
-                    sim.Keyboard.Sleep(200);
-                    sim.Keyboard.TextEntry(searchText);
-                    System.Threading.Thread.Sleep(200);
-                    sim.Keyboard.KeyPress(VirtualKeyCode.RETURN);
 
-                    SendTtsMessage("Estes são os teus resultados");
-                    break;
-                default:
+                case "open":
+                    printPossibleCommands("\u2022 Abrir/Fechar uma Tab\n" +
+                "\u2022 Fazer zoom in/out\n" +
+                "\u2022 Fazer scroll up/down" +
+                "\u2022 Guardar nos favoritos");
+                    showGifInfo(new List<string> { "Abrir Tab", "Fechar Tab","Scroll UP","Scroll Down" });
                     if (driver.Url.Contains("https://www.google.com/search?"))
                     {
+                        string rec1 = json["recognized"][1];
                         if (numbers.Contains(rec1))
                         {
 
@@ -336,48 +379,21 @@ namespace AppGui
                     }
                     break;
             }
+        }
 
-            /*
+        /*
              
-                -- visit favs
-                case "favourites":
-                sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
-                sim.Keyboard.KeyDown(VirtualKeyCode.SHIFT);
-                sim.Keyboard.KeyPress(VirtualKeyCode.VK_O);
-                sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
-                sim.Keyboard.KeyUp(VirtualKeyCode.SHIFT);
-                break;
-             */
+            -- visit favs
+            case "favourites":
+            sim.Keyboard.KeyDown(VirtualKeyCode.CONTROL);
+            sim.Keyboard.KeyDown(VirtualKeyCode.SHIFT);
+            sim.Keyboard.KeyPress(VirtualKeyCode.VK_O);
+            sim.Keyboard.KeyUp(VirtualKeyCode.CONTROL);
+            sim.Keyboard.KeyUp(VirtualKeyCode.SHIFT);
+            break;
+            */
 
 
-        }
-
-        
-        //pesquisa
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            printPossibleCommands("\u2022 Pode fazer scroll up/down\n" +
-                "\u2022 Pode aproximar ou afastar página através de zoom in/out\n" +
-                "\u2022 Pode consultar o seu histórico\n" +
-                "\u2022 Pode escolher qual link abrir, dizendo a sua posição (Ex: Abrir o 2º link)");
-            showGifInfo(new List<string> { "Scroll Up", "Scroll Down", "Ver Histórico","Abrir Tab"});         
-        }
-        //nova tab
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            printPossibleCommands("\u2022 Pode pesquisar por termos que pretender\n" +
-                "\u2022 Pode consultar o seu histórico" +
-                "\u2022 Abrir/Fechar uma tab");
-            showGifInfo(new List<string> {"Ver Histórico", "Fechar Tab" });
-        }
-        //historico
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            printPossibleCommands("\u2022 Abrir/Fechar uma Tab\n" +
-                "\u2022 Fazer zoom in/out\n" +
-                "\u2022 Fazer scroll up/down");
-            showGifInfo(new List<string> { "Abrir Tab","Fechar Tab" });
-        }
 
         private void img1_MediaEnded(object sender, RoutedEventArgs e)
         {

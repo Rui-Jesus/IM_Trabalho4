@@ -303,3 +303,43 @@ C:\Users\ruigr\OneDrive\Ambiente de Trabalho\IM\IM - 4º Trabalho\AppGui\AppGui\
 C:\Users\ruigr\OneDrive\Ambiente de Trabalho\IM\IM - 4º Trabalho\AppGui\AppGui\obj\Debug\AppGui.csproj.CopyComplete
 C:\Users\ruigr\OneDrive\Ambiente de Trabalho\IM\IM - 4º Trabalho\AppGui\AppGui\obj\Debug\AppGui.exe
 C:\Users\ruigr\OneDrive\Ambiente de Trabalho\IM\IM - 4º Trabalho\AppGui\AppGui\obj\Debug\AppGui.pdb
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\Resources\Fechar Tab.gif
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\Resources\Maximizar.gif
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\Resources\Minimizar.gif
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\Resources\Abrir Tab.gif
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\Resources\Scroll Down.gif
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\Resources\Scroll Up.gif
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\Resources\Ver Histórico.gif
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\Resources\Zoom In.gif
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\Resources\Zoom Out.gif
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\Resources\help.png
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\AppGui.exe.config
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\AppGui.exe
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\AppGui.pdb
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\Castle.Core.dll
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\Ionic.Zip.dll
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\WebDriver.dll
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\WebDriver.Support.dll
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\WindowsInput.dll
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\WpfAnimatedGif.dll
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\XamlAnimatedGif.dll
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\Castle.Core.xml
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\mmisharp.pdb
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\WebDriver.xml
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\WebDriver.Support.xml
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\WindowsInput.xml
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\bin\Debug\WpfAnimatedGif.xml
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\obj\Debug\AppGui.csprojAssemblyReference.cache
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\obj\Debug\MainWindow.g.cs
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\obj\Debug\App.g.cs
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\obj\Debug\AppGui_MarkupCompile.cache
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\obj\Debug\AppGui_MarkupCompile.lref
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\obj\Debug\MainWindow.baml
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\obj\Debug\AppGui.g.resources
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\obj\Debug\AppGui.Properties.Resources.resources
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\obj\Debug\AppGui.csproj.GenerateResource.cache
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\obj\Debug\AppGui.csproj.CopyComplete
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\obj\Debug\AppGui.exe
+C:\Users\Carlos Soares\Git\IM_Trabalho4\AppGui\AppGui\obj\Debug\AppGui.pdb

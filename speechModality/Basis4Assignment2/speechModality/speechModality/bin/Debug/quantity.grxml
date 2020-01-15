@@ -12,7 +12,7 @@
 					<ruleref uri="#QuantitySpec"/>
 					<tag> out.QuantitySpec = rules.QuantitySpec; </tag>
 				</item>
-				<item repeat="0-1">
+				<item>
 					<ruleref uri="#QuantityOptionalObject"/>
 				</item>
 			</item>
@@ -35,7 +35,7 @@
 			<item> sete <tag> out = "7x" </tag> </item>
 			<item> oito <tag> out = "8x" </tag> </item>
 			<item> nove <tag> out = "9x" </tag> </item>
-			<item> dez <tag> out = "10x" </tag> </item>
+			<item> dez <tag> out = "10x" </tag> </item>     
 		</one-of>
 	</rule>
 
@@ -58,7 +58,7 @@
 				<item> completamente </item>
 			</one-of>
 		</item>
-		<tag>out = "total"</tag>
-
+		<tag>out = "100x"</tag>
   </rule>
+  
 </grammar>
