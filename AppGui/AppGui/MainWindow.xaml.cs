@@ -54,6 +54,8 @@ namespace AppGui
 
             sim = new InputSimulator();
             tabs = driver.WindowHandles.ToList();
+            
+
 
             mmiC = new MmiCommunication("localhost", 8000, "User1", "GUI");
             mmiC.Message += MmiC_Message;
@@ -67,7 +69,7 @@ namespace AppGui
 
 
             //StartUp Gifs of the Helper
-            printPossibleCommands("\u2022 Pode pesquisar por termos que pretender (os iniciais são 'futebol','notícias e '')\n\u2022 Pode abrir novas tabs\n");
+            printPossibleCommands("\u2022 Pode pesquisar por termos que pretender (os iniciais são 'futebol' e 'notícias)\n\u2022 Pode abrir novas tabs\n");
             img1.Play();
             img2.Play();
             img3.Play();

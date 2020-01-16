@@ -1,1 +1,0 @@
-java -jar IMruntime/mmiframeworkV2.jar

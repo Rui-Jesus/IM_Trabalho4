@@ -49,6 +49,7 @@ namespace speechModality
             lce = new LifeCycleEvents("ASR", "FUSION", "speech-1", "acoustic", "command"); // LifeCycleEvents(string source, string target, string id, string medium, string mode)
             //mmic = new MmiCommunication("localhost",9876,"User1", "ASR");  //PORT TO FUSION - uncomment this line to work with fusion later
             mmic = new MmiCommunication("localhost", 9876, "User1", "ASR"); // MmiCommunication(string IMhost, int portIM, string UserOD, string thisModalityName)
+            mmic.Start();
             mmic.Send(lce.NewContextRequest());
 
             //Initialize mmi to receive messages from GUI
@@ -57,6 +58,7 @@ namespace speechModality
             mmic_gui.Start();
 
             culture = CultureInfo.GetCultureInfo("pt-PT");
+            //culture = new System.Globalization.CultureInfo("pt-PT")
 
             var sampleDoc = new SrgsDocument(Environment.CurrentDirectory + "\\ptG.grxml");
             sampleDoc.Culture = culture;
@@ -98,7 +100,7 @@ namespace speechModality
             //Update grammar with some few basic words
             
 
-            //updateGrammar(temp_words);
+            updateGrammar(temp_words);
 
         }
 
@@ -153,7 +155,7 @@ namespace speechModality
             {
 
                 string text_to_speak = json.text_to_speak;
-                //speechSynthesizer.SpeakAsync(text_to_speak);
+                speechSynthesizer.SpeakAsync(text_to_speak);
                 
             }
             else if (action.Equals("newWords"))

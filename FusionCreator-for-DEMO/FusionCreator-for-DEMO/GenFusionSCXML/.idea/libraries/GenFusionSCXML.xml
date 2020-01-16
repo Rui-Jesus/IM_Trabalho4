@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="GenFusionSCXML">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/GenFusionSCXML.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

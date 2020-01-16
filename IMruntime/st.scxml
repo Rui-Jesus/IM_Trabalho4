@@ -89,7 +89,7 @@
 					</if>
 				
 					<!-- EVENT FROM TOUCH -->
-					<if cond="${_eventdata.sourceMC eq 'TOUCH'}">
+					<if cond="${_eventdata.sourceMC eq 'GESTURES'}">
 						<assign name="currAction" expr="command" />
 						<assign name="Action" expr="${_eventdata.data}" />
 						<commons:var name="startRequest" expr="${mmi:newStartRequest(contextId, source, 'GUI', mmi:newRequestId(contextId), currAction, Action)}" />
